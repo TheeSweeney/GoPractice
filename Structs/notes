@@ -106,3 +106,53 @@ Go and Pointers
     }
         - Go is a pass by value language, so the above code will not work as expected.
         - When we pass a value into a function, the function acts on a copy of the value, not the original value
+
+    `&variable` - give me access to memory address of variable
+
+    `*pointer` - give me the value this memory address is pointing at
+
+***********pointer example**************
+func main() {
+	jim := person{
+		firstName: "Jim",
+		lastName:  "Party",
+		contactInfo: contactInfo{
+			email:   "jim@gmail.com",
+			zipCode: 90201,
+		},
+	}
+
+	jim.print()
+
+	jimPointer := &jim
+	//jim is a reference to the struct
+	//using the `&` we turn &jim into a memory address or pointer
+	jimPointer.updateName("Jimmy")
+
+	jim.print()
+}
+
+func (pointerToPerson *person) updateName(newFirstName string) {
+	//^^^ a `*` in front of a type means we're working with a pointer to one of those types - here a point to a person
+	//this is a description a type
+	(*pointerToPerson).firstName = newFirstName
+	//^^^ a `*` here means 'take this mem address and turn it into a value'
+}
+
+    - Turn an address into a vlaue with *address
+    - Turn a value into an address with &value
+
+    if we have a function where one the of parameters is specified as a pointer
+        
+        func (pointerToPerson *person) updateName(newFirstName string) {
+            //do work
+        }
+        
+        Go allows us to enter a pointer that type:
+            
+            (jimPointer = &jim) 
+            jimPointer.upDateName("butt")
+
+        OR just a value of the type
+
+            jim.upDateName("butt")

@@ -25,13 +25,12 @@ func main() {
 
 	jim.print()
 
-	jimPointer := &jim
-	jimPointer.updateName("Jimmy")
-
+	jim.updateName("Jimmy")
 	jim.print()
 }
 
 func (pointerToPerson *person) updateName(newFirstName string) {
+	//^^if we define a pointer as a parameter in a function, Go allows us to enter a pointer that type (jimPointer = &jim) OR just a value of the type (jim).
 	(*pointerToPerson).firstName = newFirstName
 }
 
