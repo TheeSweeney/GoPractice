@@ -37,5 +37,33 @@ Structs
             //assuming alex has been created using any of the three methods above
             alex.firstName = "Butts"
             alex.lastName = "McGee"
+
+    We can also place structs inside of other structs
+        type contactInfo struct {
+            email   string
+            zipCode int
+        }
+
+        type person struct {
+            firstName,
+            lastName string
+            contact contactInfo
+        }
+
+        jim := person{
+            firstName: "Jim",
+            lastName:  "Party",
+            contact: contactInfo{
+                email:   "jim@gmail.com",
+                zipCode: 90201,
+            },
+        }
+        
+    
+    Multiline struct declarations must end with a trailling comma:
+        jim := person{
+            firstName: "Jim",
+            lastName:  "Party",
+        }
 Printf
     print statement that allows for string interpolation and formatting
