@@ -65,5 +65,27 @@ Structs
             firstName: "Jim",
             lastName:  "Party",
         }
+    
+    If a fieldname and its type are the same the following syntax can be used:
+
+        type contactInfo struct {
+            email   string
+            zipCode int
+        }
+
+        type person struct {
+            firstName,
+            lastName string
+            contactInfo                 <<<Note difference
+        }
+
+        jim := person{
+            firstName: "Jim",
+            lastName:  "Party",
+            contactInfo: contactInfo{   <<<Note difference
+                email:   "jim@gmail.com",
+                zipCode: 90201,
+            },
+        }
 Printf
     print statement that allows for string interpolation and formatting
