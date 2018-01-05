@@ -1,0 +1,41 @@
+Structs
+    similar in concept to JS object
+ 
+    syntax:
+
+        creating a struct
+
+            type person struct {
+                // firstName string
+                // lastName  string
+                // since both parts of the struct are string, it can be written as
+                firstName, lastName string
+            }
+
+        populating struct, 3 methods:
+
+            alex := person{"Alex", "Anderson"}
+            
+                - if we do not specify, fields will be assigned in the order they exist in the struct
+                - not great in case we want to reorder the struct
+
+            alex := person{firstName: "Alex", lastName: "Anderson"}
+
+                - this way we can add fields in any order, and can impartially complete a struct - if a struct has three fields, we can assign values to the firs and third
+
+            var alex person
+                - when creating var in go but assigning it no value, Go assigns it a "Zero value" to it or it's contituent parts
+                    - any string fields will be assigned:
+                        ""
+                    - any int fields   
+                        0
+                    - float
+                        0
+                    - bool
+                        false
+        updating structs:
+            //assuming alex has been created using any of the three methods above
+            alex.firstName = "Butts"
+            alex.lastName = "McGee"
+Printf
+    print statement that allows for string interpolation and formatting
