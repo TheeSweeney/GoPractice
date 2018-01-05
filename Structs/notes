@@ -87,5 +87,22 @@ Structs
                 zipCode: 90201,
             },
         }
+
+    We can attach receiver functions to structs:
+        func (p person) print() {
+            fmt.Printf("%+v", p)
+        }
+
+        //assuming a person struct called "jim" was created as above
+
+        jim.print()
+        >>{firstName:Jim lastName:Party contactInfo:{email:jim@gmail.com zipCode:90201}}
 Printf
     print statement that allows for string interpolation and formatting
+
+Go and Pointers
+    func (p person) updateName(newFirstName string) {
+    	p.firstName = newFirstName
+    }
+        - Go is a pass by value language, so the above code will not work as expected.
+        - When we pass a value into a function, the function acts on a copy of the value, not the original value
