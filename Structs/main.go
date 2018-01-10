@@ -30,7 +30,7 @@ func main() {
 }
 
 func (pointerToPerson *person) updateName(newFirstName string) {
-	//^^if we define a pointer as a parameter in a function, Go allows us to enter a pointer that type (jimPointer = &jim) OR just a value of the type (jim).
+	//^^if we define a pointer as a parameter in a function, Go allows us to enter a pointer to that type (jimPointer = &jim) OR just a value of the type (jim).
 	(*pointerToPerson).firstName = newFirstName
 }
 
