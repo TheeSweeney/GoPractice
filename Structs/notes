@@ -21,10 +21,10 @@ Structs
 
             alex := person{firstName: "Alex", lastName: "Anderson"}
 
-                - this way we can add fields in any order, and can impartially complete a struct - if a struct has three fields, we can assign values to the firs and third
+                - this way we can add fields in any order, and can impartially complete a struct - if a struct has three fields, we can assign values to the first and third
 
             var alex person
-                - when creating var in go but assigning it no value, Go assigns it a "Zero value" to it or it's contituent parts
+                - when creating var in go but assigning it no value, Go assigns it a "Zero value" to it or it's constituent parts
                     - any string fields will be assigned:
                         ""
                     - any int fields   
@@ -126,7 +126,7 @@ func main() {
 
 	jimPointer := &jim
 	//jim is a reference to the struct
-	//using the `&` we turn &jim into a memory address or pointer
+	//using the `&` we turn &jimPointer into a memory address or pointer
 	jimPointer.updateName("Jimmy")
 
 	jim.print()
@@ -139,7 +139,7 @@ func (pointerToPerson *person) updateName(newFirstName string) {
 	//^^^ a `*` here means 'take this mem address and turn it into a value'
 }
 
-    - Turn an address into a vlaue with *address
+    - Turn an address into a value with *address
     - Turn a value into an address with &value
 
     if we have a function where one the of parameters is specified as a pointer
@@ -148,7 +148,7 @@ func (pointerToPerson *person) updateName(newFirstName string) {
             //do work
         }
         
-        Go allows us to enter a pointer that type:
+        Go allows us to enter a pointer of that type:
             
             (jimPointer = &jim) 
             jimPointer.upDateName("butt")
