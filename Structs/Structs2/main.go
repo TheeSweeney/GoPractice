@@ -15,6 +15,6 @@ func main() {
 		lastName:  "mcGee",
 	}
 
-	fmt.Println(jim)
+	fmt.Printf("%+v", jim)
 
 }
