@@ -1,0 +1,6 @@
+Maps
+    very closely related to JS objects
+    Both keys and values are statically types
+        when we add some number of keys to a map, they must all be the exact same types
+        all values must also be of the same types
+        keys and values need not be the same type as each other
