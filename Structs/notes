@@ -107,9 +107,9 @@ Go and Pointers
         - Go is a pass by value language, so the above code will not work as expected.
         - When we pass a value into a function, the function acts on a copy of the value, not the original value
 
-    `&variable` - give me access to memory address of variable
+    `&variable` - give me access to memory address of 'variable'. If the variable in this case is assigned a value of "butts", printing &variable will not print "butts" but will print some location in memory. If another pointer changes the information at that memory location, the value of &variable will not change, but if we print out *&variable, it will print the new information. 
 
-    `*pointer` - give me the value this memory address is pointing at
+    `*pointer` - give me the value the memory address 'pointer' is pointing at/give me direct access to the value
 
 ***********pointer example**************
 func main() {
