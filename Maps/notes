@@ -19,4 +19,17 @@ Maps
             - this will create a map with no key value pairs
             - this style is used if we want to a figure out later on what key value pairs we'd like to add on to it
 
+        colors := make(map[string]string)
+            - functionally equivalent to above method
+    Updating maps
+	- maps can be populated with the bracket/square brace syntax
+	- maps can NOT use the . syntax ie colors.white = "#ffffff" because all keys are strictly typed
+    
+        colors["white"] = "#ffffff"
+    
+    - remove key/value pairs in a map by using the delete() function
+
+        delete(colors, "white")
         
+
+
