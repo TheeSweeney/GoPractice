@@ -6,6 +6,10 @@ type bot interface {
 	getGreeting() string
 }
 
+//This is basically saying:
+//yo program, we have a new type called "bot" (need not be named that way, just done to match the englishBot or spanishBot)
+//if you are a type in this program with a function called "getGreeting", you are now an honorary memnber of the type "bot"
+
 type englishBot struct{}
 type spanishBot struct{}
 
@@ -21,6 +25,9 @@ func main() {
 func printGreeting(b bot) {
 	fmt.Println(b.getGreeting())
 }
+
+//because englishBot and spanishBot both implement a "getGreeting" function, they are also type "bot"
+//as such, they have access to the printGreeting func
 
 //for examples sake, imagine the two getGreeting funcs contain very custom logic
 func (englishBot) getGreeting() string {
