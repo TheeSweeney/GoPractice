@@ -1,0 +1,7 @@
+What we know
+    every value has a type
+    every function the type of its parameters
+Which means...
+    Every function we ever write has to be rewritten to accomodate different types even if the logic is identical?
+
+    Consider the shuffle funciont we wrote for a deck of cards. Do we need to write a seperate functino if we want to shuffle an int? a slice?a string?

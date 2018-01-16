@@ -133,14 +133,14 @@ func main() {
 }
 
 func (pointerToPerson *person) updateName(newFirstName string) {
-	//^^^ a `*` in front of a type means we're working with a pointer to one of those types - here a point to a person
+	//^^^ a `*` in front of a type means we're working with a pointer to one of those types - in this eg. a point to a person
 	//this is a description a type
 	(*pointerToPerson).firstName = newFirstName
 	//^^^ a `*` here means 'take this mem address and turn it into a value'
 }
 
-    - Turn an address into a value with *address
     - Turn a value into an address with &value
+    - Turn an address into a value with *address
 
     if we have a function where one the of parameters is specified as a pointer
         
