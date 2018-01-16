@@ -1,0 +1,16 @@
+A field within a struct can be an interface
+
+An interface can be created by embedding multiple interfaces within one another
+
+    type Reader interface {
+        read() string
+    }
+
+    type Closer interface {
+        close() string
+    }
+
+    type ReadCloser interface {
+        Reader
+        Closer
+    }
