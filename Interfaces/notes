@@ -62,6 +62,11 @@ By defining an interface, we can make a sort of super object that give propertie
             return "Hola"
         }
 
+    Interfaces are implicit - we do not manually hae to say that a custom type satisfies some interface's conditions
+
+    interfaces are a contract to help us manage types - it is not a way to test code. They are about helping us reuse code
+
+    interfaces are tough, step 1 is understanding how to read them - understand how to read interfaces in the standard lib. Writing your own interfaces is tough and requires experience. They are not a requirement of the language, though they can certainly help for DRY code.
 
 Concrete vs Interface types
     concrete - something we can create a value out of directly, allowing us to access it, changes it copy it, etc
