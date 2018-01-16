@@ -1,9 +1,9 @@
 Maps
     very closely related to JS objects
     Both keys and values are statically types
-        when we add some number of keys to a map, they must all be the exact same types
-        all values must also be of the same types
-        keys and values need not be the same type as each other
+        - when we add some number of keys to a map, they must all be the exact same types
+        - all values must also be of the same type
+        - keys and values need not be the same type as each other
     
     3 ways to define map
 
@@ -22,14 +22,41 @@ Maps
         colors := make(map[string]string)
             - functionally equivalent to above method
     Updating maps
-	- maps can be populated with the bracket/square brace syntax
-	- maps can NOT use the . syntax ie colors.white = "#ffffff" because all keys are strictly typed
-    
-        colors["white"] = "#ffffff"
-    
-    - remove key/value pairs in a map by using the delete() function
 
-        delete(colors, "white")
+        - maps can be populated with the bracket/square brace syntax
+        - maps can NOT use the . syntax ie colors.white = "#ffffff" because all keys are strictly typed
         
+            colors["white"] = "#ffffff"
+        
+        - remove key/value pairs in a map by using the delete() function
 
+            delete(colors, "white")
+    Looping through maps
+
+        type of map being iterated over vvv
+        func printMap(c map[string]string) {
+            for color, hex := range c {
+                fmt.Println("Hex code for", color, "is", hex)
+            }
+                - color -> key for this step through the loop
+                - hex -> value for this step through the loop
+        }
+
+    Maps vs structs 
+        Maps 
+            - all keys must be of the same type
+            - all values must be of the same type
+            - keys are indexed - we can iterate over them
+            - Reference Type!
+                - no pointers needed to manipulate original map
+            - Don't need to know all keys at compile time
+            - used to represent collection of related properties
+        Structs 
+            - values can be different types
+            - keys don't support indexing
+            - Value Type!
+                - must use pointers to manipulate original 
+            - must know all different fields at compile time
+                - prop names and types must be explicitly declared 
+            - use to represent a "thing" with many diff properties
 
