@@ -5,3 +5,65 @@ Which means...
     Every function we ever write has to be rewritten to accomodate different types even if the logic is identical?
 
     Consider the shuffle funciont we wrote for a deck of cards. Do we need to write a seperate functino if we want to shuffle an int? a slice?a string?
+
+We can use interfaces to define a method set, or a function set
+By defining an interface, we can make a sort of super object that give properties to anything that fits a certain criteria
+
+    format
+            vvv interface name
+        type bot interface {
+            getGreeting(string, int) (string, error)
+            ^^^          ^^^              ^^^
+        func name     arg types     return types
+        }
+    
+    if multiple methods are attached to the interface, a qualifying struct must have ALL to match
+
+    type botTwo interface {
+        getGreeting()
+        getVersion()
+    }
+        
+    Example
+        type bot interface {
+            getGreeting() string
+        }
+
+        //This is basically saying:
+        //yo program, we have a new type called "bot" (need not be named that way, just done to match the englishBot or spanishBot)
+        //if you are a type in this program with a function called "getGreeting", you are now an honorary memnber of the type "bot"
+
+        type englishBot struct{}
+        type spanishBot struct{}
+
+        func main() {
+            eb := englishBot{}
+            sb := spanishBot{}
+
+            printGreeting(eb)
+            printGreeting(sb)
+
+        }
+
+        func printGreeting(b bot) {
+            fmt.Println(b.getGreeting())
+        }
+
+        //because englishBot and spanishBot both implement a "getGreeting" function, they are also type "bot"
+        //as such, they have access to the printGreeting func
+
+        //for examples sake, imagine the two getGreeting funcs contain very custom logic
+        func (englishBot) getGreeting() string {
+            //^^^ because we are not using the receiver in the function, we do not need to include a reference to it (for example func (eb englishBot) getGreeting()...)
+            return "Hi There!"
+        }
+
+        func (spanishBot) getGreeting() string {
+            return "Hola"
+        }
+
+
+Concrete vs Interface types
+    concrete - something we can create a value out of directly, allowing us to access it, changes it copy it, etc
+        map, struct, int, string, custom types created by extending a concrete type
+    interface - we can not create a value directly out of this type.
