@@ -72,3 +72,18 @@ Concrete vs Interface types
     concrete - something we can create a value out of directly, allowing us to access it, changes it copy it, etc
         map, struct, int, string, custom types created by extending a concrete type
     interface - we can not create a value directly out of this type.
+
+An interface can be created by embedding multiple interfaces within one another
+
+    type Reader interface {
+        read() string
+    }
+
+    type Closer interface {
+        close() string
+    }
+
+    type ReadCloser interface {
+        Reader
+        Closer
+    }
